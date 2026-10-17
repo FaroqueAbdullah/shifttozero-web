@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat, Noto_Sans_Bengali } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { pageMetadata, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
@@ -24,13 +25,16 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Shift to Zero Carbon",
-    template: "%s | Shift to Zero Carbon",
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Pioneering the next era of industrial decarbonization. We bridge the gap between heavy industry and environmental stewardship.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  ...pageMetadata({ path: "/" }),
+  // Pages set their own canonical; don't let every route inherit the home URL.
+  alternates: undefined,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

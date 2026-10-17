@@ -11,7 +11,7 @@ export const SITE_SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings" && _id
 }`);
 
 const postCard = `_id, title, "slug": slug.current, category, coverImage, excerpt, publishedAt, featured, tags,
-  ${readTime}, "author": author->{ name, role, photo }`;
+  ${readTime}, "author": author->{ name, role, photo }, _updatedAt`;
 
 export const POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)]
   | order(publishedAt desc){ ${postCard} }`);
@@ -28,7 +28,7 @@ export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slu
 export const POST_SLUGS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)].slug.current`);
 
 const eventCard = `_id, title, "slug": slug.current, eventType, mode, location, startsAt, endsAt, capacity,
-  summary, heroImage, cta`;
+  summary, heroImage, cta, _updatedAt`;
 
 export const EVENTS_QUERY = defineQuery(`*[_type == "event" && defined(slug.current)]
   | order(startsAt asc){ ${eventCard} }`);

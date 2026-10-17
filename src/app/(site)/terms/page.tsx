@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/organisms/site/LegalPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Terms of Service" };
+export const metadata: Metadata = pageMetadata({ path: "/terms", title: "Terms of Service" });
 
 // DRAFT: have this reviewed before launch.
 export default function TermsPage() {

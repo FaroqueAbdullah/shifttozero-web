@@ -4,11 +4,12 @@ import { BlogExplorer } from "@/components/organisms/blog/BlogExplorer";
 import { PageHero } from "@/components/organisms/site/PageHero";
 import { features } from "@/lib/features";
 import { getPosts } from "@/sanity/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 const description =
   "Explore the latest advancements in decarbonization technology, policy shifts, and community initiatives driving the transition to a sustainable future.";
 
-export const metadata: Metadata = { title: "Blog", description };
+export const metadata: Metadata = pageMetadata({ path: "/blog", title: "Blog", description });
 
 export default async function BlogPage() {
   if (!features.blog) notFound();

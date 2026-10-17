@@ -3,11 +3,12 @@ import { EventExplorer } from "@/components/organisms/events/EventExplorer";
 import { PastEvents } from "@/components/organisms/events/PastEvents";
 import { PageHero } from "@/components/organisms/site/PageHero";
 import { getEventsByTime } from "@/sanity/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 const description =
   "Engage with industry leaders, participate in hands-on decarbonization workshops, and join our global community in the shift to a sustainable future.";
 
-export const metadata: Metadata = { title: "Events", description };
+export const metadata: Metadata = pageMetadata({ path: "/events", title: "Events", description });
 
 export default async function EventsPage() {
   const { upcoming, past } = await getEventsByTime();

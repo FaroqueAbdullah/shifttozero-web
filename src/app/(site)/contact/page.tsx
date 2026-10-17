@@ -5,10 +5,11 @@ import { ContactFromQuery } from "@/components/organisms/forms/ContactFromQuery"
 import { ContactForm } from "@/components/organisms/forms/GetInvolvedForms";
 import { PageHero } from "@/components/organisms/site/PageHero";
 import { getSiteSettings } from "@/sanity/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
 const description = "Talk to us about funding, partnerships, our research or the media.";
 
-export const metadata: Metadata = { title: "Contact Us", description };
+export const metadata: Metadata = pageMetadata({ path: "/contact", title: "Contact Us", description });
 
 export default async function ContactPage() {
   const settings = await getSiteSettings();

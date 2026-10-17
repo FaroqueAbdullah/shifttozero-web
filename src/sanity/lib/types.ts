@@ -11,6 +11,8 @@ export type SanityImage = {
   alt?: string;
 };
 
+export type Seo = { title?: string; description?: string; image?: SanityImage };
+
 export type IconItem = { _key: string; icon?: string; title?: string; text?: string };
 export type StatItem = { _key: string; icon?: string; value?: string; label?: string };
 
@@ -26,6 +28,7 @@ export type SiteSettings = {
   coreValues?: IconItem[];
   socialLinks?: { _key: string; platform?: string; url?: string }[];
   contactEmail?: string;
+  defaultSeo?: Seo;
   brochureUrl?: string | null;
   impact?: {
     eyebrow?: string;
@@ -70,10 +73,12 @@ export type PostCard = {
   tags?: string[];
   readTime?: number;
   author?: PersonSummary | null;
+  _updatedAt?: string;
 };
 
 export type Post = PostCard & {
   body?: PortableTextBlock[];
+  seo?: Seo;
   related: PostCard[];
 };
 
@@ -92,12 +97,14 @@ export type EventCard = {
   summary?: string;
   heroImage?: SanityImage;
   cta?: EventCta;
+  _updatedAt?: string;
 };
 
 export type EventDetail = EventCard & {
   about?: PortableTextBlock[];
   highlights?: StatItem[];
   venue?: { name?: string; address?: string; mapUrl?: string };
+  seo?: Seo;
   agenda?: {
     _key: string;
     time?: string;
