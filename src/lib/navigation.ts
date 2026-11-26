@@ -23,7 +23,7 @@ export const footerNav = [
     links: [
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
-      { href: "/#methodology", label: "Our Approach" },
+      { href: "/about#approach", label: "Our Approach" },
       { href: "/tools", label: "Carbon Tools" },
       // { href: "/team", label: "Team" }, // hidden for now
     ],

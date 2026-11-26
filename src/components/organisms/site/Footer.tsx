@@ -31,7 +31,7 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
             { href: "/about", label: "About" },
             { href: "/privacy", label: "Privacy Policy" },
             { href: "/terms", label: "Terms of Service" },
-            { href: "/#methodology", label: "Carbon Methodology" },
+            { href: "/about#approach", label: "Our Approach" },
             { href: "/contact", label: "Contact Us" },
           ].map(({ href, label }) => (
             <Link
