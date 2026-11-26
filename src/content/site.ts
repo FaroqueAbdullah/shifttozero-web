@@ -61,7 +61,7 @@ export const emissions = {
   title: "Bangladesh industrial emissions",
   breakdown: [
     { _key: "power", label: "Power generation", percent: 40 },
-    { _key: "rmg", label: "Ready-made garments", percent: 27 },
+    { _key: "garments", label: "Ready-made garments", percent: 27 },
     { _key: "cement", label: "Cement", percent: 15 },
     { _key: "other", label: "Leather and other", percent: 18 },
   ],
