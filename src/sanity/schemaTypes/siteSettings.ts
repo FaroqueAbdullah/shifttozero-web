@@ -100,6 +100,8 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      // Not shown on the site: this copy is now in src/content/site.ts (appDemo).
+      hidden: true,
       name: "app",
       title: "3. Our app",
       type: "object",

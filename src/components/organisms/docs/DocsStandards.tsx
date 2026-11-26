@@ -12,7 +12,7 @@ export function DocsStandards() {
       <div className="container-page">
         <DocsHeading
           eyebrow="Standards and classification"
-          title="Built on the GHG Protocol and ISO 14064-1"
+          title="Designed around the GHG Protocol and ISO 14064-1"
           lede="Every emission record carries its scope, source category, gas and factor version, so the same data produces either framework's report."
         />
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -123,7 +123,11 @@ export function DocsRollout() {
   return (
     <section id="rollout" className="scroll-mt-32 py-20 md:py-[88px]">
       <div className="container-page">
-        <DocsHeading eyebrow="Suggested rollout" title="Start small, prove it in the field" />
+        <DocsHeading
+          eyebrow="Planned rollout"
+          title="Start small, prove it in the field"
+          lede="STZ Collect is in design and early prototype (v0.1). These phases are our plan; the first one comes next."
+        />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {phases.map((p, i) => (
             <Reveal key={p.phase} delay={i * 0.08}>
@@ -137,7 +141,7 @@ export function DocsRollout() {
                   {p.phase}
                   {p.now && (
                     <span className="ml-2 rounded-full bg-primary px-2 py-0.5 text-[11px] text-on-primary">
-                      Now
+                      Next
                     </span>
                   )}
                 </span>

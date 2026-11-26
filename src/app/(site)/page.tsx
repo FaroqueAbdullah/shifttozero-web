@@ -6,7 +6,7 @@ import { FundingCall } from "@/components/organisms/home/FundingCall";
 import { VolunteerCall } from "@/components/organisms/home/VolunteerCall";
 import { WhatWeDo } from "@/components/organisms/home/WhatWeDo";
 import { WhereWeAre } from "@/components/organisms/home/WhereWeAre";
-import { emissions, whatWeDo } from "@/content/site";
+import { appDemo, emissions, whatWeDo } from "@/content/site";
 import { features } from "@/lib/features";
 import { pageMetadata, SITE_NAME } from "@/lib/seo";
 import { getLatestPosts, getSiteSettings } from "@/sanity/lib/content";
@@ -27,7 +27,7 @@ export default async function HomePage() {
     <MotionProvider>
       <WhatWeDo whatWeDo={whatWeDo} emissions={emissions} />
       <WhereWeAre />
-      <AppDemo title={settings.app?.title} text={settings.app?.text} />
+      <AppDemo title={appDemo.title} text={appDemo.text} />
       <VolunteerCall volunteer={settings.volunteer} />
       <FundingCall funding={settings.funding} brochureUrl={settings.brochureUrl} />
       {features.blog && <BlogCarousel posts={posts} />}

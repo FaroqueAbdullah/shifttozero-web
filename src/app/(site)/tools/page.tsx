@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { AppIntro } from "@/components/organisms/tools/AppIntro";
+import { IntegrationSupport } from "@/components/organisms/tools/IntegrationSupport";
 import { ToolDirectory } from "@/components/organisms/tools/ToolDirectory";
 import { appIntro } from "@/content/site";
 import { getTools } from "@/sanity/lib/content";
@@ -10,7 +11,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/tools",
   title: "Carbon Tools",
   description:
-    "Our carbon accounting app built for factory workers in Bangladesh, and a directory of popular carbon calculators.",
+    "STZ Collect, our data-collection app for factory workers (in development, v0.1), our integration support for third-party emissions software, and a directory of popular carbon calculators.",
 });
 
 export default async function ToolsPage() {
@@ -18,6 +19,7 @@ export default async function ToolsPage() {
   return (
     <MotionProvider>
       <AppIntro appIntro={appIntro} />
+      <IntegrationSupport />
       <ToolDirectory tools={tools} />
     </MotionProvider>
   );

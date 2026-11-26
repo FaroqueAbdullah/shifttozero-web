@@ -16,8 +16,14 @@ export function DocsHero() {
             className="text-[clamp(36px,5.4vw,60px)] leading-[1.05] font-bold tracking-[-0.02em] motion-safe:animate-rise"
             style={{ animationDelay: "0.1s" }}
           >
-            {docsHero.title}
+            {docsHero.name}
           </h1>
+          <p
+            className="text-[clamp(22px,3vw,32px)] leading-[1.2] font-semibold motion-safe:animate-rise"
+            style={{ animationDelay: "0.15s" }}
+          >
+            {docsHero.title}
+          </p>
           <p
             className="max-w-[66ch] font-body-lg text-body-lg opacity-90 motion-safe:animate-rise"
             style={{ animationDelay: "0.2s" }}

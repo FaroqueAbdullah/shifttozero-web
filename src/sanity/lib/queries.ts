@@ -4,12 +4,12 @@ import { defineQuery } from "next-sanity";
 const readTime = `"readTime": round(length(pt::text(body)) / 1000)`;
 
 /**
- * whatWeDo, impact, impactStats, emissionsBreakdown, emissionsFootnote and appIntro are no longer
+ * whatWeDo, impact, impactStats, emissionsBreakdown, emissionsFootnote, app and appIntro are no longer
  * read: that copy is in src/content/site.ts.
  */
 export const SITE_SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
   heroTitle, heroText, heroImage, methodologySteps, cta, coreValues, socialLinks, contactEmail, defaultSeo,
-  app, volunteer, funding,
+  volunteer, funding,
   "brochureUrl": brochure.asset->url
 }`);
 

@@ -4,7 +4,13 @@ import { Reveal } from "./Reveal";
 type Row = { _key: string; typical?: string; ours?: string };
 
 /** Two-column "typical tools assume / our app assumes" comparison; rows slide in one by one. */
-export function ComparisonTable({ rows }: { rows: Row[] }) {
+export function ComparisonTable({
+  rows,
+  oursLabel = "Our app assumes",
+}: {
+  rows: Row[];
+  oursLabel?: string;
+}) {
   if (!rows.length) return null;
   return (
     <div className="overflow-hidden rounded-card border border-outline-variant bg-surface-container-lowest">
@@ -13,7 +19,7 @@ export function ComparisonTable({ rows }: { rows: Row[] }) {
           Typical carbon tools assume
         </p>
         <p className="border-l border-outline-variant px-4 py-3 font-label-md text-label-md tracking-wider text-primary uppercase md:px-6">
-          Our app assumes
+          {oursLabel}
         </p>
       </div>
       <ul>

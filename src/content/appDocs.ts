@@ -1,12 +1,13 @@
 /**
- * Content for /tools/app: the public documentation of the field data app,
+ * Content for /tools/app: the public design documentation of STZ Collect,
  * adapted from the "Carbon App Blueprint" (high-level design v0.1).
  */
 
 export const docsHero = {
-  eyebrow: "High-level product documentation · v0.1",
+  eyebrow: "Design documentation · in development · v0.1",
+  name: "STZ Collect",
   title: "Carbon accounting a kiln worker can do by voice",
-  lede: "A multi-company app that turns what workers already know (sacks of coal, empty gas cylinders, meter readings) into a GHG inventory that managers, buyers and auditors can trust.",
+  lede: "A multi-company app, in development, designed to turn what workers already know (sacks of coal, empty gas cylinders, meter readings) into a GHG inventory that managers, buyers and auditors can trust.",
   facts: ["Brick kilns + ship-breaking first", "Bangla-first, works offline", "GHG Protocol · ISO 14064-1"],
 };
 
@@ -374,6 +375,7 @@ export const phases = [
       "Admin setup for bricks and ship-breaking",
       "Test with a handful of real workers per site",
     ],
+    /** Shown with a "Next" badge: the app is still in design and early prototype. */
     now: true,
   },
   {

@@ -176,3 +176,9 @@ export const about = {
     "Our long-term goal is low-cost, low-effort carbon measurement and reduction for industries across South Asia.",
   ],
 };
+
+/** Home: the scroll-through STZ Collect demo (was Sanity `app`). The screens are design mock-ups. */
+export const appDemo = {
+  title: "Data collection anyone can use.",
+  text: `Good climate decisions need good data, and much of it lives with factory workers who may not read or write easily. ${APP_NAME} is designed to collect it with pictures, icons and voice instead of long forms.`,
+};
