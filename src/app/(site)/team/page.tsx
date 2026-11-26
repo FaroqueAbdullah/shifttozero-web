@@ -7,8 +7,8 @@ import { features } from "@/lib/features";
 import { getSiteSettings, getTeam } from "@/sanity/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
-const description =
-  "Meet the passionate team of engineers, policy analysts, and industry veterans driving the transition to a decarbonized industrial sector.";
+// Hidden (features.team is false). The confirmed team is on /about.
+const description = "The people behind Shift to Zero Carbon.";
 
 export const metadata: Metadata = pageMetadata({ path: "/team", title: "Our Team", description });
 
@@ -22,7 +22,7 @@ export default async function TeamPage() {
         description={description}
         mobile={{
           title: "Our Team",
-          description: "Meet the experts driving industrial decarbonization.",
+          description: "The people behind Shift to Zero Carbon.",
           align: "center",
           tone: "default",
         }}

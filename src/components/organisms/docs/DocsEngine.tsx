@@ -18,11 +18,9 @@ export function DocsCalculation() {
           <div className="flex flex-col gap-7 rounded-[32px] border border-outline-variant bg-surface-container-lowest p-6 md:p-8">
             <p
               className="flex flex-wrap items-center gap-x-3.5 gap-y-2.5 font-mono text-[clamp(18px,2.6vw,28px)] font-bold text-primary"
-              aria-label="Emissions equal the sum over activities and gases of activity data times emission factor times global warming potential"
+              aria-label="CO₂e emissions equal the sum over activities and gases of activity data times emission factor times global warming potential"
             >
-              <span>
-                E<sub>CO₂e</sub>
-              </span>
+              <span>CO₂e</span>
               <span className="font-medium text-on-surface-variant">=</span>
               <span>Σ ( A</span>
               <span className="font-medium text-on-surface-variant">×</span>

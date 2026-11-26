@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/components/atoms/JsonLd";
 import { SiteTemplate } from "@/components/templates/SiteTemplate";
 import { ORGANIZATION_ID, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/site-config";
 import { getSiteSettings } from "@/sanity/lib/content";
 import type { SiteSettings } from "@/sanity/lib/types";
 
@@ -26,7 +27,7 @@ export default async function SiteLayout({ children }: LayoutProps<"/">) {
               url: SITE_URL,
               logo: `${SITE_URL}/logo.png`,
               description: SITE_DESCRIPTION,
-              ...(settings.contactEmail && { email: settings.contactEmail }),
+              email: CONTACT_EMAIL,
               ...(sameAs?.length && { sameAs }),
             },
             {

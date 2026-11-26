@@ -7,6 +7,7 @@ import { ChipGroup } from "@/components/molecules/ChipGroup";
 import { Reveal } from "@/components/molecules/Reveal";
 import { SearchInput } from "@/components/molecules/SearchInput";
 import { ToolCard } from "@/components/molecules/ToolCard";
+import { APP_NAME } from "@/content/site";
 import { TOOL_CATEGORIES, type ToolCategory } from "@/sanity/constants";
 import type { CarbonTool } from "@/sanity/lib/types";
 import { EmptyState } from "../EmptyState";
@@ -43,7 +44,8 @@ export function ToolDirectory({ tools }: { tools: CarbonTool[] }) {
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Well-known calculators and platforms for measuring emissions, from free standards to enterprise
-            software. Each links to its official site.
+            software. All of them are made by other organizations, and each links to its official site. This
+            is a general directory, not a list of tools we have set up at factories.
           </p>
         </Reveal>
 
@@ -92,14 +94,14 @@ export function ToolDirectory({ tools }: { tools: CarbonTool[] }) {
         <Reveal className="mt-12">
           <div className="flex flex-col items-start justify-between gap-4 rounded-card bg-primary p-6 text-on-primary md:flex-row md:items-center md:p-8">
             <p className="max-w-2xl font-body-lg text-body-lg">
-              These tools work well for analysts. Our app brings the same standards to the people who generate
-              the data.
+              These tools work well for analysts. {APP_NAME}, which we are designing now, aims to bring the
+              same standards to the people who generate the data.
             </p>
             <Link
               href="#our-app"
               className="flex shrink-0 items-center gap-2 rounded-lg bg-surface-container-lowest px-6 py-3 font-label-md text-label-md text-primary"
             >
-              About our app <Icon name="arrow_upward" className="text-[18px]" />
+              About {APP_NAME} <Icon name="arrow_upward" className="text-[18px]" />
             </Link>
           </div>
         </Reveal>

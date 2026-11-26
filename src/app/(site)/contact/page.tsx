@@ -4,15 +4,14 @@ import { Icon } from "@/components/atoms/Icon";
 import { ContactFromQuery } from "@/components/organisms/forms/ContactFromQuery";
 import { ContactForm } from "@/components/organisms/forms/GetInvolvedForms";
 import { PageHero } from "@/components/organisms/site/PageHero";
-import { getSiteSettings } from "@/sanity/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { CONTACT_EMAIL } from "@/lib/site-config";
 
 const description = "Talk to us about funding, partnerships, our research or the media.";
 
 export const metadata: Metadata = pageMetadata({ path: "/contact", title: "Contact Us", description });
 
-export default async function ContactPage() {
-  const settings = await getSiteSettings();
+export default function ContactPage() {
   return (
     <>
       <PageHero title="Contact Us" description={description} align="center" tinted />
@@ -26,18 +25,16 @@ export default async function ContactPage() {
           <div>
             <h2 className="mb-2 font-headline-md text-headline-md text-on-surface">Support our research</h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
-              We are a non-profit. Choose &ldquo;Funding&rdquo; as the topic and we&apos;ll share our funding
-              plan and how contributions are used.
+              Shift to Zero Carbon is a climate movement in its pilot phase. Choose &ldquo;Funding&rdquo; as
+              the topic and we&apos;ll share our funding plan and how contributions are used.
             </p>
           </div>
-          {settings.contactEmail && (
-            <a
-              href={`mailto:${settings.contactEmail}`}
-              className="flex items-center gap-3 font-body-md text-body-md text-primary hover:underline"
-            >
-              <Icon name="mail" /> {settings.contactEmail}
-            </a>
-          )}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="flex min-h-14 items-center gap-3 font-body-md text-body-md text-primary hover:underline"
+          >
+            <Icon name="mail" /> {CONTACT_EMAIL}
+          </a>
         </aside>
       </div>
     </>

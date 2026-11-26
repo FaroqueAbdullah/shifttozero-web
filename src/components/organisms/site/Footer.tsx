@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { CurrentYear } from "@/components/atoms/CurrentYear";
 import { Icon } from "@/components/atoms/Icon";
+import { ORG_SUMMARY } from "@/content/site";
 import { footerNav } from "@/lib/navigation";
+import { CONTACT_EMAIL } from "@/lib/site-config";
 import type { SiteSettings } from "@/sanity/lib/types";
 
 const socialIcon: Record<string, string> = {
@@ -15,21 +17,24 @@ const socialIcon: Record<string, string> = {
 const linkClass =
   "font-body-md text-body-md text-on-surface-variant opacity-80 transition-colors hover:text-primary hover:underline hover:opacity-100";
 const roundLink =
-  "flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-colors hover:bg-primary hover:text-on-primary";
+  "touch-target flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-colors hover:bg-primary hover:text-on-primary";
 
-export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmail" | "socialLinks"> }) {
+export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks"> }) {
+  // TODO(Faroque): no social profile URLs exist in the repo or in Sanity. Add them in Sanity
+  // (Site settings → General → Social links) once the accounts exist; they appear here automatically.
   const socials = settings.socialLinks?.filter((s) => s.url) ?? [];
 
   return (
     <footer className="w-full border-t border-outline-variant bg-surface-container-highest">
-      {/* Mobile: compact centered footer (Stitch mobile screens). */}
-      <div className="flex flex-col items-center gap-4 px-margin-mobile py-8 text-center md:hidden">
+      {/* Mobile: compact centered footer (Stitch mobile screens). Hidden from md up with display: none. */}
+      <div className="flex flex-col items-center gap-4 px-margin-mobile pt-8 pb-4 text-center md:hidden">
         <span className="font-headline-md text-headline-md font-bold text-primary">Shift to Zero Carbon</span>
         <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-4 gap-y-2">
           {[
+            { href: "/about", label: "About" },
             { href: "/privacy", label: "Privacy Policy" },
             { href: "/terms", label: "Terms of Service" },
-            { href: "/#methodology", label: "Carbon Methodology" },
+            { href: "/about#approach", label: "Our Approach" },
             { href: "/contact", label: "Contact Us" },
           ].map(({ href, label }) => (
             <Link
@@ -41,9 +46,6 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
             </Link>
           ))}
         </nav>
-        <p className="font-caption text-caption text-on-surface-variant">
-          © <CurrentYear /> Shift to Zero Carbon. All rights reserved.
-        </p>
       </div>
 
       <div className="mx-auto hidden max-w-container-max grid-cols-5 gap-gutter px-margin-desktop py-12 md:grid">
@@ -54,30 +56,28 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
               Shift to Zero Carbon
             </span>
           </div>
-          <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">
-            Driving the transition to sustainable heavy industry through technology, policy, and action.
-          </p>
-          {(settings.contactEmail || socials.length > 0) && (
-            <div className="flex gap-3">
-              {settings.contactEmail && (
-                <a href={`mailto:${settings.contactEmail}`} className={roundLink} aria-label="Email us">
-                  <Icon name="mail" />
-                </a>
-              )}
-              {socials.map((s) => (
-                <a
-                  key={s._key}
-                  href={s.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={roundLink}
-                  aria-label={s.platform}
-                >
-                  <Icon name={socialIcon[s.platform ?? ""] ?? "share"} />
-                </a>
-              ))}
-            </div>
-          )}
+          <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">{ORG_SUMMARY}</p>
+          <div className="flex gap-4">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className={roundLink}
+              aria-label={`Email us at ${CONTACT_EMAIL}`}
+            >
+              <Icon name="mail" />
+            </a>
+            {socials.map((s) => (
+              <a
+                key={s._key}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className={roundLink}
+                aria-label={s.platform}
+              >
+                <Icon name={socialIcon[s.platform ?? ""] ?? "share"} />
+              </a>
+            ))}
+          </div>
         </div>
         {footerNav.map((group) => (
           <div key={group.title}>
@@ -96,8 +96,9 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
           </div>
         ))}
       </div>
-      <div className="hidden border-t border-outline-variant/30 py-6 md:block">
-        <p className="container-page font-caption text-caption text-on-surface-variant">
+      {/* One copyright line for every screen size; the blocks above are mobile/desktop variants. */}
+      <div className="border-t border-outline-variant/30 py-6">
+        <p className="container-page text-center font-caption text-caption text-on-surface-variant md:text-left">
           © <CurrentYear /> Shift to Zero Carbon. All rights reserved.
         </p>
       </div>

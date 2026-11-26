@@ -7,7 +7,7 @@ export const metadata: Metadata = pageMetadata({ path: "/terms", title: "Terms o
 // DRAFT: have this reviewed before launch.
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="October 2026">
+    <LegalPage title="Terms of Service" updated="November 2026">
       <p>By using this website you agree to these terms.</p>
       <h2>Use of content</h2>
       <p>
@@ -20,8 +20,6 @@ export default function TermsPage() {
         The Carbon Tools directory links to services run by other organizations. We do not control them and
         are not responsible for their content or results.
       </p>
-      <h2>Events</h2>
-      <p>Event details may change. Registration for some events is handled by external providers.</p>
       <h2>Contact</h2>
       <p>
         Questions about these terms? <a href="/contact">Contact us</a>.

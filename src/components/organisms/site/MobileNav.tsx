@@ -28,7 +28,7 @@ export function MobileNav() {
         aria-expanded={open}
         aria-controls="mobile-menu"
         onClick={() => setOpen((o) => !o)}
-        className="-ml-2 flex h-10 w-10 items-center justify-center rounded-full text-primary hover:bg-surface-container-low"
+        className="touch-target -ml-2 flex h-10 w-10 items-center justify-center rounded-full text-primary hover:bg-surface-container-low"
       >
         <Icon name={open ? "close" : "menu"} />
       </button>

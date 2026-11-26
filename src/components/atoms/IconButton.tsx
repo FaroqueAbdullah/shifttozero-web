@@ -27,7 +27,7 @@ export function IconButton({
       aria-label={label}
       title={label}
       className={cn(
-        "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-primary",
+        "touch-target inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors focus-visible:outline-2 focus-visible:outline-primary",
         tone === "danger"
           ? "text-error hover:bg-error-container hover:text-on-error-container"
           : "text-on-surface-variant hover:bg-surface-container-high hover:text-primary",

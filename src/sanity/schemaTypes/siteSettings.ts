@@ -35,6 +35,8 @@ export const siteSettings = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      // Not shown on the site: this copy is now in src/content/site.ts so public claims go through code review.
+      hidden: true,
       name: "whatWeDo",
       title: "1. What we do",
       type: "object",
@@ -47,8 +49,10 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      // Retired: the site no longer shows impact numbers. "Where we are" in src/content/site.ts replaces it.
+      hidden: true,
       name: "impact",
-      title: "2. Impact numbers",
+      title: "Impact numbers (retired)",
       type: "object",
       group: "home",
       fields: [
@@ -62,7 +66,7 @@ export const siteSettings = defineType({
         }),
         defineField({
           name: "factories",
-          title: "Factories onboarded",
+          title: "Factories",
           type: "object",
           fields: [
             defineField({ name: "value", type: "number", validation: (r) => r.required().min(0) }),
@@ -79,7 +83,7 @@ export const siteSettings = defineType({
             defineField({
               name: "value",
               type: "number",
-              description: "Number to count up to, e.g. 1.2",
+              description: "Number to count up to",
               validation: (r) => r.required().min(0),
             }),
             defineField({
@@ -88,7 +92,7 @@ export const siteSettings = defineType({
               initialValue: 0,
               validation: (r) => r.min(0).max(2).integer(),
             }),
-            defineField({ name: "suffix", type: "string", description: 'e.g. "M+" for millions' }),
+            defineField({ name: "suffix", type: "string" }),
             defineField({ name: "label", type: "string" }),
             defineField({ name: "note", type: "string" }),
           ],
@@ -96,6 +100,8 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      // Not shown on the site: this copy is now in src/content/site.ts (appDemo).
+      hidden: true,
       name: "app",
       title: "3. Our app",
       type: "object",
@@ -165,6 +171,8 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      // Not shown on the site: this copy is now in src/content/site.ts so public claims go through code review.
+      hidden: true,
       name: "emissionsBreakdown",
       title: "Bangladesh industrial emissions summary",
       type: "array",
@@ -183,7 +191,7 @@ export const siteSettings = defineType({
         }),
       ],
     }),
-    defineField({ name: "emissionsFootnote", type: "string", group: "home" }),
+    defineField({ hidden: true, name: "emissionsFootnote", type: "string", group: "home" }),
     defineField({
       name: "impactStats",
       hidden: true,
@@ -195,8 +203,8 @@ export const siteSettings = defineType({
           type: "object",
           fields: [
             defineField({ name: "icon", type: "string", description: "Material Symbols name" }),
-            defineField({ name: "value", type: "string", description: 'e.g. "500+"' }),
-            defineField({ name: "label", type: "string", description: 'e.g. "Companies Onboarded"' }),
+            defineField({ name: "value", type: "string" }),
+            defineField({ name: "label", type: "string" }),
           ],
           preview: { select: { title: "value", subtitle: "label" } },
         }),
@@ -234,6 +242,8 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({
+      // Not shown on the site: this copy is now in src/content/site.ts so public claims go through code review.
+      hidden: true,
       name: "appIntro",
       title: "Our app introduction",
       type: "object",
@@ -296,7 +306,8 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({ name: "brochure", type: "file", group: "general", options: { accept: "application/pdf" } }),
-    defineField({ name: "contactEmail", type: "string", group: "general" }),
+    // Not shown on the site: the address is CONTACT_EMAIL in src/lib/site-config.ts.
+    defineField({ hidden: true, name: "contactEmail", type: "string", group: "general" }),
     defineField({ name: "defaultSeo", type: "seo", group: "general" }),
   ],
   preview: { prepare: () => ({ title: "Site settings" }) },

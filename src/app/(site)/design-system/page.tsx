@@ -12,7 +12,6 @@ import { Skeleton } from "@/components/atoms/Skeleton";
 import { StatusDot } from "@/components/atoms/StatusDot";
 import { Text } from "@/components/atoms/Text";
 import { DateBadge } from "@/components/molecules/DateBadge";
-import { EventCard } from "@/components/molecules/EventCard";
 import { Marquee } from "@/components/molecules/Marquee";
 import { PhoneMockup } from "@/components/molecules/PhoneMockup";
 import { Reveal } from "@/components/molecules/Reveal";
@@ -26,18 +25,6 @@ import { StatTile } from "@/components/molecules/StatTile";
 import { TagList } from "@/components/molecules/TagList";
 import { ToolCard } from "@/components/molecules/ToolCard";
 import { EmptyState } from "@/components/organisms/EmptyState";
-import type { EventCard as EventData } from "@/sanity/lib/types";
-
-const sampleEvent: EventData = {
-  _id: "sample",
-  title: "Global Industrial Decarbonization Summit",
-  slug: "sample",
-  eventType: "Summit",
-  mode: "In person",
-  location: "Berlin, Germany",
-  startsAt: "2026-11-15T08:00:00Z",
-  summary: "Two days on scalable carbon capture and policy integration for heavy manufacturing.",
-};
 
 export const metadata: Metadata = {
   title: "Design System",
@@ -211,7 +198,7 @@ export default function DesignSystemPage() {
           </div>
           <div className="flex flex-col gap-1 rounded-feature bg-primary-container p-6 text-on-primary-container">
             <Icon name="eco" className="text-[32px]" />
-            <p className="font-headline-lg text-headline-lg">1.2M+ Tons</p>
+            <p className="font-headline-lg text-headline-lg">00 units</p>
             <p className="font-label-md text-label-md">Impact stat · radius-feature 24px</p>
           </div>
         </div>
@@ -280,7 +267,7 @@ export default function DesignSystemPage() {
             <div className="flex flex-col gap-6">
               <Reveal>
                 <p className="font-headline-lg text-headline-lg text-primary">
-                  <AnimatedNumber value={1200000} suffix="+" />
+                  <AnimatedNumber value={1234} />
                 </p>
                 <Text variant="caption">
                   AnimatedNumber inside Reveal: counts up and fades in when scrolled into view.
@@ -313,29 +300,29 @@ export default function DesignSystemPage() {
           </div>
           <div className="flex flex-wrap items-center gap-6">
             <DateBadge date="2026-11-15T08:00:00Z" />
-            <MetaItem icon="location_on">Berlin, Germany</MetaItem>
+            <MetaItem icon="location_on">Sample location</MetaItem>
             <MetaItem icon="schedule">8 min read</MetaItem>
             <TagList tags={["Direct Air Capture", "Heavy Manufacturing"]} />
           </div>
           <div className="grid gap-gutter md:grid-cols-3">
-            <StatTile icon="corporate_fare" value="500+" label="Companies Onboarded" />
+            <StatTile icon="corporate_fare" value="00" label="Sample stat" />
             <StatTile
               icon="eco"
-              value="1.2M+ Tons"
-              label="CO₂e Reduced"
+              value="00 units"
+              label="Sample highlighted stat"
               highlighted
-              ribbon="Verified Impact"
+              ribbon="Ribbon"
             />
             <div className="flex flex-col gap-6 rounded-xl border border-outline-variant p-6">
-              <StatTile variant="glance" icon="groups" value="500+ Attendees" label="Industry Leaders" />
+              <StatTile variant="glance" icon="groups" value="00 sample" label="Glance stat" />
               <StatTile
                 variant="glance"
                 icon="mic"
-                value="40+ Speakers"
-                label="Global Experts"
+                value="00 sample"
+                label="Glance stat (secondary)"
                 tone="secondary"
               />
-              <StatTile variant="figure" value="40%" label="Power Gen" />
+              <StatTile variant="figure" value="00%" label="Figure stat" />
             </div>
           </div>
           <div className="grid gap-gutter md:grid-cols-3">
@@ -359,11 +346,6 @@ export default function DesignSystemPage() {
                 url: "#",
               }}
             />
-          </div>
-          <EventCard event={sampleEvent} />
-          <div className="grid gap-gutter md:grid-cols-2">
-            <EventCard event={sampleEvent} variant="tile" />
-            <EventCard event={sampleEvent} variant="past" past />
           </div>
           <EmptyState title="Empty state" text="Shown when a list or filter has no results." />
         </div>

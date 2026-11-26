@@ -4,9 +4,10 @@ import { Icon } from "@/components/atoms/Icon";
 import { ComparisonTable } from "@/components/molecules/ComparisonTable";
 import { FlowCards } from "@/components/molecules/FlowCards";
 import { Reveal } from "@/components/molecules/Reveal";
+import { APP_NAME } from "@/content/site";
 import type { SiteSettings } from "@/sanity/lib/types";
 
-/** Tools page, section 1: why our app exists, with links to its docs and demo. */
+/** Tools page, section 1: why STZ Collect exists, with links to its design docs and demo. */
 export function AppIntro({ appIntro }: Pick<SiteSettings, "appIntro">) {
   if (!appIntro?.title) return null;
   return (
@@ -42,7 +43,7 @@ export function AppIntro({ appIntro }: Pick<SiteSettings, "appIntro">) {
               href="/tools/app"
               className="group flex items-center justify-center gap-2 rounded-lg bg-primary px-7 py-3 font-label-md text-label-md text-on-primary shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-primary-container hover:text-on-primary-container"
             >
-              <Icon name="menu_book" /> Read the app docs
+              <Icon name="menu_book" /> Read the {APP_NAME} design
               <Icon name="arrow_forward" className="transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
@@ -55,7 +56,7 @@ export function AppIntro({ appIntro }: Pick<SiteSettings, "appIntro">) {
               href="/contact?topic=Partnership"
               className="flex items-center justify-center gap-2 rounded-lg px-4 py-3 font-label-md text-label-md text-primary hover:underline"
             >
-              Join the pilot <Icon name="arrow_forward" className="text-[18px]" />
+              Talk to us about {APP_NAME} <Icon name="arrow_forward" className="text-[18px]" />
             </Link>
           </div>
         </div>
@@ -68,10 +69,10 @@ export function AppIntro({ appIntro }: Pick<SiteSettings, "appIntro">) {
         <div className="container-page pb-20">
           <Reveal>
             <h2 className="mb-6 font-headline-md text-headline-md text-on-surface">
-              Built for the people who hold the data
+              Designed for the people who hold the data
             </h2>
           </Reveal>
-          <ComparisonTable rows={appIntro.comparison} />
+          <ComparisonTable rows={appIntro.comparison} oursLabel={`${APP_NAME} assumes`} />
         </div>
       ) : null}
     </section>

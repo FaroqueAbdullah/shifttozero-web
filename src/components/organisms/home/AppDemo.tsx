@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { appDemoSteps } from "@/content/appDemo";
+import { APP_NAME, APP_STATUS } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 type AppDemoProps = {
@@ -78,7 +79,7 @@ export function AppDemo({ title, text, id = "app", stickyTop = 96 }: AppDemoProp
       <div className="mx-auto max-w-[1120px] px-4">
         <div className="mb-12 flex max-w-[760px] flex-col gap-[14px]">
           <p className="text-[12px] font-semibold tracking-[0.08em] text-[var(--demo-muted)] uppercase">
-            Demo · a morning at the kiln
+            Design demo · {APP_NAME} ({APP_STATUS}) · a morning at the kiln
           </p>
           <h2 className="text-[clamp(28px,4vw,40px)] leading-[1.15] font-bold tracking-[-0.015em] text-balance text-[var(--demo-fg)]">
             {title || "Data collection anyone can use."}

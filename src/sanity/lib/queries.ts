@@ -3,10 +3,13 @@ import { defineQuery } from "next-sanity";
 /** ~1000 characters per minute (≈200 words × 5 chars). The UI rounds up to at least 1. */
 const readTime = `"readTime": round(length(pt::text(body)) / 1000)`;
 
+/**
+ * whatWeDo, impact, impactStats, emissionsBreakdown, emissionsFootnote, app and appIntro are no longer
+ * read: that copy is in src/content/site.ts. contactEmail is CONTACT_EMAIL in src/lib/site-config.ts.
+ */
 export const SITE_SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
-  heroTitle, heroText, heroImage, emissionsBreakdown, emissionsFootnote, impactStats,
-  methodologySteps, cta, coreValues, socialLinks, contactEmail, defaultSeo,
-  whatWeDo, impact, app, volunteer, funding, appIntro,
+  heroTitle, heroText, heroImage, methodologySteps, cta, coreValues, socialLinks, defaultSeo,
+  volunteer, funding,
   "brochureUrl": brochure.asset->url
 }`);
 
@@ -26,20 +29,6 @@ export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slu
 }`);
 
 export const POST_SLUGS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)].slug.current`);
-
-const eventCard = `_id, title, "slug": slug.current, eventType, mode, location, startsAt, endsAt, capacity,
-  summary, heroImage, cta, _updatedAt`;
-
-export const EVENTS_QUERY = defineQuery(`*[_type == "event" && defined(slug.current)]
-  | order(startsAt asc){ ${eventCard} }`);
-
-export const EVENT_QUERY = defineQuery(`*[_type == "event" && slug.current == $slug][0]{
-  ${eventCard}, about, highlights, venue, seo,
-  agenda[]{ _key, time, title, description,
-    "speaker": coalesce(speaker->{ name, role, photo }, select(defined(speakerName) => { "name": speakerName })) }
-}`);
-
-export const EVENT_SLUGS_QUERY = defineQuery(`*[_type == "event" && defined(slug.current)].slug.current`);
 
 export const TEAM_QUERY = defineQuery(`*[_type == "teamMember"] | order(order asc, name asc){
   _id, name, role, department, photo, bio, linkedin

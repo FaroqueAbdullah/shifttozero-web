@@ -303,3 +303,31 @@
     padding-inline: var(--spacing-margin-desktop);
   }
 }
+
+/*
+ * Material Symbols: the icon name is generated content (Icon sets data-icon), so ligature words
+ * stay out of the DOM text. The 1em box clips the word if the icon font has not loaded yet.
+ */
+@layer base {
+  .material-symbols-outlined[data-icon] {
+    width: 1em;
+    overflow: hidden;
+  }
+  .material-symbols-outlined[data-icon]::before {
+    content: attr(data-icon);
+  }
+}
+
+/* Grows the tappable area to at least 56 × 56 px without changing how a small control looks. */
+@utility touch-target {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, 56px);
+    height: max(100%, 56px);
+    transform: translate(-50%, -50%);
+  }
+}

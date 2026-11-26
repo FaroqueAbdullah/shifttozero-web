@@ -1,23 +1,26 @@
 /**
- * Content for /tools/app: the public documentation of the field data app,
+ * Content for /tools/app: the public design documentation of STZ Collect,
  * adapted from the "Carbon App Blueprint" (high-level design v0.1).
  */
 
 export const docsHero = {
-  eyebrow: "High-level product documentation · v0.1",
+  eyebrow: "Design documentation · in development · v0.1",
+  name: "STZ Collect",
   title: "Carbon accounting a kiln worker can do by voice",
-  lede: "A multi-company app that turns what workers already know (sacks of coal, empty gas cylinders, meter readings) into a GHG inventory that managers, buyers and auditors can trust.",
+  lede: "A multi-company app, in development, designed to turn what workers already know (sacks of coal, empty gas cylinders, meter readings) into a GHG inventory that managers, buyers and auditors can trust.",
   facts: ["Brick kilns + ship-breaking first", "Bangla-first, works offline", "GHG Protocol · ISO 14064-1"],
 };
 
 export const docsNav = [
   { id: "people", label: "People" },
+  { id: "principles", label: "Principles" },
   { id: "flow", label: "How it works" },
   { id: "demo", label: "Demo" },
   { id: "calc", label: "Calculation" },
   { id: "industries", label: "Industries" },
   { id: "ai", label: "AI" },
   { id: "design", label: "Low literacy" },
+  { id: "open-question", label: "Open question" },
   { id: "standards", label: "Standards" },
   { id: "architecture", label: "Architecture" },
   { id: "rollout", label: "Rollout" },
@@ -58,6 +61,35 @@ export const people = [
     ],
   },
 ];
+
+/** Design principles behind STZ Collect. */
+export const designPrinciples = [
+  {
+    icon: "accessibility_new",
+    title: "Usable by anyone",
+    text: "The app has to work for anyone, whatever their education. If a step needs reading, it also needs another way: a picture, a sound, or a number to tap.",
+  },
+  {
+    icon: "memory",
+    title: "Small, open-source models",
+    text: "We plan to use small open-source AI models instead of large ones, to avoid the high token costs that come with large models.",
+  },
+  {
+    icon: "energy_savings_leaf",
+    title: "Mind the energy cost",
+    text: "Large models need a lot of energy to run. A tool that measures emissions should not add to them, so we aim to use the smallest model that does the job.",
+  },
+];
+
+/** The open research question for STZ Collect. */
+export const openQuestion = {
+  question: "How can someone who cannot read confirm what the AI recorded?",
+  paragraphs: [
+    "Speech models mishear. When a worker says a sentence, the AI turns it into entries such as “Coal · 12 sacks”. But the person who spoke often cannot read what is on the screen, so they cannot check it the way a reader would.",
+    "The current design reads every entry back aloud, shows pictures next to numbers, and asks a two-choice question when the AI is unsure. We do not yet know whether that is enough for someone to notice a mistake and fix it.",
+    "This is the question we most want to answer. If you work on speech interfaces, low-literacy design or human checks of AI output, we would like to hear from you.",
+  ],
+};
 
 export type Stage = {
   key: string;
@@ -107,7 +139,7 @@ export const stages: Stage[] = [
     icon: "calculate",
     text: "Activity data is multiplied by a versioned emission factor and converted to CO₂e with global warming potentials. Each result is tagged with its scope, source category, ISO 14064-1 category and gas.",
     chips: [
-      { text: "E = A × EF × GWP", mono: true },
+      { text: "CO₂e = A × EF × GWP", mono: true },
       { text: "Scope 1 · Stationary combustion", ok: true },
     ],
   },
@@ -152,6 +184,11 @@ export const chain = [
   { label: "Classified", value: "Scope 1 · Stationary combustion", end: true },
 ];
 
+/**
+ * Industries STZ Collect is designed for first. Brick kilns lead, as on every other page.
+ * TODO(Faroque): confirm 5th industry, and whether this list should match INDUSTRIES in
+ * src/content/site.ts (which has no ship-breaking) or stay app-specific.
+ */
 export const industries = [
   {
     icon: "grid_view",
@@ -369,6 +406,7 @@ export const phases = [
       "Admin setup for bricks and ship-breaking",
       "Test with a handful of real workers per site",
     ],
+    /** Shown with a "Next" badge: the app is still in design and early prototype. */
     now: true,
   },
   {

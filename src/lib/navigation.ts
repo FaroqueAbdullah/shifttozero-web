@@ -1,7 +1,8 @@
 export const mainNav = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/tools", label: "Carbon Tools" },
-  { href: "/events", label: "Events" },
+  { href: "/field-notes", label: "Field notes" },
   // { href: "/blog", label: "Blog" }, // hidden for now
   // { href: "/team", label: "Team" }, // hidden for now
 ] as const;
@@ -9,8 +10,9 @@ export const mainNav = [
 /** Bottom tab bar on mobile (from the Stitch mobile screens). */
 export const mobileTabs = [
   { href: "/", label: "Home", icon: "home" },
+  { href: "/about", label: "About", icon: "info" },
   { href: "/tools", label: "Tools", icon: "dataset" },
-  { href: "/events", label: "Events", icon: "calendar_month" },
+  { href: "/field-notes", label: "Field notes", icon: "description" },
   // { href: "/blog", label: "Blog", icon: "newspaper" }, // hidden for now
 ] as const;
 
@@ -20,7 +22,8 @@ export const footerNav = [
     title: "Platform",
     links: [
       { href: "/", label: "Home" },
-      { href: "/#methodology", label: "Our Approach" },
+      { href: "/about", label: "About" },
+      { href: "/about#approach", label: "Our Approach" },
       { href: "/tools", label: "Carbon Tools" },
       // { href: "/team", label: "Team" }, // hidden for now
     ],
@@ -28,7 +31,7 @@ export const footerNav = [
   {
     title: "Community",
     links: [
-      { href: "/events", label: "Events" },
+      { href: "/field-notes", label: "Field notes" },
       // { href: "/blog", label: "Blog" }, // hidden for now
       { href: "/get-involved", label: "Get Involved" },
       { href: "/contact", label: "Contact Us" },
