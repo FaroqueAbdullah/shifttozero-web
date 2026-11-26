@@ -152,6 +152,11 @@ export const chain = [
   { label: "Classified", value: "Scope 1 · Stationary combustion", end: true },
 ];
 
+/**
+ * Industries STZ Collect is designed for first. Brick kilns lead, as on every other page.
+ * TODO(Faroque): confirm 5th industry, and whether this list should match INDUSTRIES in
+ * src/content/site.ts (which has no ship-breaking) or stay app-specific.
+ */
 export const industries = [
   {
     icon: "grid_view",
