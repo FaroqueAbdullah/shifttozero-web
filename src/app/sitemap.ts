@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
   const pages = [
     "/",
+    "/about",
     "/tools",
     "/tools/app",
     "/events",

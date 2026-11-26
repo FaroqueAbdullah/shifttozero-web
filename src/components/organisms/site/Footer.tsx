@@ -28,6 +28,7 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
         <span className="font-headline-md text-headline-md font-bold text-primary">Shift to Zero Carbon</span>
         <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-4 gap-y-2">
           {[
+            { href: "/about", label: "About" },
             { href: "/privacy", label: "Privacy Policy" },
             { href: "/terms", label: "Terms of Service" },
             { href: "/#methodology", label: "Carbon Methodology" },

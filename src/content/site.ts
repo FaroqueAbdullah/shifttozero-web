@@ -136,3 +136,43 @@ export const appIntro = {
     },
   ],
 };
+
+/** The two tracks of work. Shown on About; Track 1 is expanded on /tools#integration. */
+export const tracks = [
+  {
+    id: "integration",
+    label: "Track 1",
+    icon: "integration_instructions",
+    title: "Integration support",
+    text: "Some factories have staff who can manage complex data. We help them adopt existing third-party emissions software. We did not build that software; we help a factory start using it. So far we have supported 2 garment companies this way.",
+    href: "/tools#integration",
+    cta: "How integration support works",
+  },
+  {
+    id: "collect",
+    label: "Track 2",
+    icon: "record_voice_over",
+    title: APP_NAME,
+    text: `Many workers who hold the data cannot read, so forms fail them. ${APP_NAME} is a voice-first data-collection app for brick kilns, garment units and ship-breaking yards. It is in development: design and early prototype, v0.1.`,
+    href: "/tools/app",
+    cta: `Read the ${APP_NAME} design`,
+  },
+];
+
+/**
+ * Team shown on /about. Only confirmed people are listed.
+ * TODO(Faroque): add the other co-founders (name, role, one-line background). Do not add
+ * placeholder people; leave them out until confirmed.
+ */
+export const team = [{ name: "Faroque Abdullah", role: "Co-founder & Research Lead" }];
+
+/** /about */
+export const about = {
+  title: "About Shift to Zero Carbon",
+  lede: `${ORG_SUMMARY} We are in our pilot phase.`,
+  who: [
+    "Shift to Zero Carbon (STZ) is a Bangladeshi climate movement. We work on one problem: greenhouse-gas emissions from industry in Bangladesh.",
+    "A group of Bangladeshi software and electrical engineers started STZ in mid-2025. We are in our pilot phase, which means we are testing our approach with a small number of factories before we grow.",
+    "Our long-term goal is low-cost, low-effort carbon measurement and reduction for industries across South Asia.",
+  ],
+};
