@@ -7,7 +7,7 @@ export const metadata: Metadata = pageMetadata({ path: "/terms", title: "Terms o
 // DRAFT: have this reviewed before launch.
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="October 2026">
+    <LegalPage title="Terms of Service" updated="November 2026">
       <p>By using this website you agree to these terms.</p>
       <h2>Use of content</h2>
       <p>
