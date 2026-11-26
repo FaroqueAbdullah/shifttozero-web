@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CurrentYear } from "@/components/atoms/CurrentYear";
 import { Icon } from "@/components/atoms/Icon";
+import { ORG_SUMMARY } from "@/content/site";
 import { footerNav } from "@/lib/navigation";
 import type { SiteSettings } from "@/sanity/lib/types";
 
@@ -54,9 +55,7 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
               Shift to Zero Carbon
             </span>
           </div>
-          <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">
-            Driving the transition to sustainable heavy industry through technology, policy, and action.
-          </p>
+          <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">{ORG_SUMMARY}</p>
           {(settings.contactEmail || socials.length > 0) && (
             <div className="flex gap-3">
               {settings.contactEmail && (

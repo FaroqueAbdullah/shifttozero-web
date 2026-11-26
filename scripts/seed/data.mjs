@@ -1,5 +1,9 @@
 /**
  * Sample content taken from the Stitch designs ("Shift to Zero Carbon Portal").
+ *
+ * Public claims (what we do, where we are, the emissions chart, industries, contact email) now
+ * live in src/content/site.ts, not Sanity. The matching values below
+ * are kept in line with those files so a re-seed never brings back old claims.
  * Dates are shifted relative to Oct 2026 so "upcoming" and "past" sections both have items.
  * Replace with real content before launch (`npm run seed:delete` removes everything below).
  */
@@ -13,12 +17,12 @@ export const settings = {
     "We bridge the gap between heavy industry and environmental stewardship. Transform your operations, measure your impact, and lead the movement toward a zero-carbon future.",
   heroImage: "homeHero",
   emissionsBreakdown: [
-    { label: "Power Gen", percent: 40 },
-    { label: "RMG Sector", percent: 27 },
+    { label: "Power generation", percent: 40 },
+    { label: "Ready-made garments", percent: 27 },
     { label: "Cement", percent: 15 },
-    { label: "Leather/Other", percent: 18 },
+    { label: "Leather and other", percent: 18 },
   ],
-  emissionsFootnote: "*Data reflects total industrial emissions in Bangladesh.",
+  emissionsFootnote: "Share of total industrial emissions in Bangladesh. Source and year to be added.",
   methodologySteps: [
     {
       icon: "calculate",
@@ -36,11 +40,7 @@ export const settings = {
       text: "Strategically allocate resources into green technology adaptation and infrastructure upgrades to continuously drive down net carbon output.",
     },
   ],
-  impactStats: [
-    { icon: "corporate_fare", value: "500+", label: "Companies Onboarded" },
-    { icon: "eco", value: "1.2M+ Tons", label: "CO₂e Emissions Reduced" },
-    { icon: "volunteer_activism", value: "10,000+", label: "Volunteers Involved" },
-  ],
+  impactStats: [],
   cta: {
     title: "Ready to transform your operations?",
     text: "Join the coalition of industry leaders committing to a sustainable, zero-carbon future.",
@@ -130,7 +130,8 @@ export const tools = [
     category: "Free & standards",
     pricing: "Free",
     icon: "calculate",
-    description: "Free spreadsheet tools and emission factor workbooks for calculating emissions from sources such as stationary combustion, transport and electricity.",
+    description:
+      "Free spreadsheet tools and emission factor workbooks for calculating emissions from sources such as stationary combustion, transport and electricity.",
     audience: "Companies and GHG practitioners",
     inputs: "Activity data in Excel worksheets",
     url: "https://ghgprotocol.org/calculation-tools-and-guidance",
@@ -141,7 +142,8 @@ export const tools = [
     category: "Product footprint (LCA)",
     pricing: "Free",
     icon: "inventory_2",
-    description: "Free, open-source life cycle assessment and footprint software, with a Collaboration Server for shared databases and onlineLCA for web use.",
+    description:
+      "Free, open-source life cycle assessment and footprint software, with a Collaboration Server for shared databases and onlineLCA for web use.",
     audience: "Industry, consultants and researchers",
     inputs: "LCA databases and process data",
     url: "https://www.openlca.org/",
@@ -152,7 +154,8 @@ export const tools = [
     category: "Industry-specific",
     pricing: "Paid",
     icon: "apparel",
-    description: "Self-assessment, verifiable by third parties, of a manufacturing facility's energy, GHG, water, wastewater, air emissions, waste and chemicals.",
+    description:
+      "Self-assessment, verifiable by third parties, of a manufacturing facility's energy, GHG, water, wastewater, air emissions, waste and chemicals.",
     audience: "Apparel and footwear manufacturers",
     inputs: "Facility energy, water and waste data",
     url: "https://cascale.org/tools-programs/higg-index-tools/facility-tools/",
@@ -163,7 +166,8 @@ export const tools = [
     category: "Business platforms",
     pricing: "Paid",
     icon: "corporate_fare",
-    description: "Sustainability data platform for measuring, reporting and reducing corporate emissions, water and land impacts, with AI-assisted data handling.",
+    description:
+      "Sustainability data platform for measuring, reporting and reducing corporate emissions, water and land impacts, with AI-assisted data handling.",
     audience: "Enterprise sustainability teams",
     inputs: "Spreadsheets, invoices and supply chain data",
     url: "https://watershed.com/",
@@ -174,7 +178,8 @@ export const tools = [
     category: "Business platforms",
     pricing: "Paid",
     icon: "account_balance",
-    description: "Carbon accounting platform for Scope 1-3 footprinting, climate disclosure reporting and decarbonization planning for companies and financial institutions.",
+    description:
+      "Carbon accounting platform for Scope 1-3 footprinting, climate disclosure reporting and decarbonization planning for companies and financial institutions.",
     audience: "Businesses and financial institutions",
     inputs: "Operational and spend data",
     url: "https://www.persefoni.com/",
@@ -185,7 +190,8 @@ export const tools = [
     category: "Business platforms",
     pricing: "Paid",
     icon: "monitoring",
-    description: "Platform for collecting carbon and ESG data, including supplier data, and reporting against frameworks such as CSRD, ISSB, CDP and GHG Protocol.",
+    description:
+      "Platform for collecting carbon and ESG data, including supplier data, and reporting against frameworks such as CSRD, ISSB, CDP and GHG Protocol.",
     audience: "Enterprise and mid-market companies",
     inputs: "Purchase, supplier and operational data",
     url: "https://www.sweep.net/",
@@ -196,7 +202,8 @@ export const tools = [
     category: "Business platforms",
     pricing: "Paid",
     icon: "eco",
-    description: "Carbon management platform for company carbon footprints, reduction plans, CSRD/VSME reporting, product LCAs and supplier engagement.",
+    description:
+      "Carbon management platform for company carbon footprints, reduction plans, CSRD/VSME reporting, product LCAs and supplier engagement.",
     audience: "SMEs to large companies",
     inputs: "Company activity and supplier data",
     url: "https://greenly.earth/en-gb",
@@ -207,7 +214,8 @@ export const tools = [
     category: "Product footprint (LCA)",
     pricing: "Paid",
     icon: "inventory_2",
-    description: "Life cycle assessment software, in cloud and desktop editions, for modelling and analysing the environmental impacts of products and processes.",
+    description:
+      "Life cycle assessment software, in cloud and desktop editions, for modelling and analysing the environmental impacts of products and processes.",
     audience: "LCA experts and sustainability teams",
     inputs: "Life cycle inventory datasets",
     url: "https://simapro.com/",
@@ -218,7 +226,8 @@ export const tools = [
     category: "Developer API",
     pricing: "Paid",
     icon: "code",
-    description: "Emissions calculation engine and API with an emission factor database, used to calculate product, purchase and freight emissions.",
+    description:
+      "Emissions calculation engine and API with an emission factor database, used to calculate product, purchase and freight emissions.",
     audience: "Developers and software platforms",
     inputs: "Activity and spend data via API",
     url: "https://www.climatiq.io/",
@@ -557,9 +566,9 @@ export const events = [
 /** New animated Home page sections (added to existing site settings only where missing). */
 export const homeSections = {
   appIntro: {
-    eyebrow: "Our app · in development",
+    eyebrow: "STZ Collect · in development · v0.1",
     title: "Most carbon tools are built for analysts. Most emissions happen on the factory floor.",
-    text: "Today's carbon calculators assume a sustainability team: spreadsheets, English, emission factors and scopes. But in Bangladesh's brick kilns, garment units and ship-breaking yards, the people who know how much coal was burned are workers and supervisors, often with limited reading, shared phones and weak networks. We're building an app that lets them record what they already know (sacks of coal, gas cylinders, meter readings) by tapping, speaking in Bangla or taking a photo, and turns it into a standards-based GHG inventory.",
+    text: "Today's carbon calculators assume a sustainability team: spreadsheets, English, emission factors and scopes. But in Bangladesh's brick kilns, garment units and ship-breaking yards, the people who know how much coal was burned are workers and supervisors, often with limited reading, shared phones and weak networks. We are designing STZ Collect, an app that lets them record what they already know (sacks of coal, gas cylinders, meter readings) by tapping, speaking in Bangla or taking a photo, and turns it into a standards-based GHG inventory.",
     comparison: [
       { typical: "A trained sustainability analyst", ours: "A kiln worker or yard supervisor" },
       { typical: "Typing into forms and spreadsheets", ours: "Tap, speak in Bangla, or take a photo" },
@@ -568,31 +577,14 @@ export const homeSections = {
       { typical: "Data gathered months later for a report", ours: "Recorded daily, on site, with evidence" },
     ],
   },
-  impact: {
-    eyebrow: "Our impact so far",
-    title: "Real factories. Real reductions.",
-    factories: {
-      value: 500,
-      suffix: "+",
-      label: "Factories onboarded",
-      note: "Brick kilns, garment units, cement and leather plants across Bangladesh.",
-    },
-    carbon: {
-      value: 1.2,
-      decimals: 1,
-      suffix: "M+",
-      label: "Tonnes of CO₂e reduced",
-      note: "Emission reductions at partner factories since we started.",
-    },
-  },
   whatWeDo: {
-    eyebrow: "Non-profit research · Bangladesh",
+    eyebrow: "Climate movement · Bangladesh · pilot phase",
     title: "Cutting industrial carbon in Bangladesh, one factory at a time.",
-    text: "Shift to Zero Carbon is a non-profit research organization. We study how Bangladesh's factories (power, garments, cement and leather) produce emissions, and turn that research into practical, affordable ways to reduce them.",
+    text: "Shift to Zero Carbon is a Bangladeshi climate movement, started in mid-2025 by a group of software and electrical engineers. We study how Bangladesh's factories (brick kilns, garments, cement, leather and power) produce emissions, and turn that research into practical, affordable ways to reduce them.",
     pillars: [
       { icon: "science", title: "Research", text: "Measure where industrial emissions really come from." },
       { icon: "campaign", title: "Share", text: "Publish open, plain-language findings anyone can use." },
-      { icon: "eco", title: "Act", text: "Work with factories on reductions that pay off." },
+      { icon: "eco", title: "Act", text: "Work with factories on reductions that pay for themselves." },
     ],
   },
   app: {
@@ -600,10 +592,26 @@ export const homeSections = {
     title: "Data collection anyone can use.",
     text: "Good climate decisions need good data, and much of it lives with factory workers and communities who may not read or write easily. Our app collects it with pictures, icons and voice instead of long forms.",
     steps: [
-      { icon: "touch_app", title: "Pick with pictures", text: "Icons and photos replace text menus, so no reading is needed." },
-      { icon: "mic", title: "Speak, don't type", text: "Answer questions by voice in Bangla; we transcribe later." },
-      { icon: "wifi_off", title: "Works offline", text: "Saves everything on the phone and syncs when a connection returns." },
-      { icon: "diversity_3", title: "Volunteer assisted", text: "Trained volunteers guide people through each survey on site." },
+      {
+        icon: "touch_app",
+        title: "Pick with pictures",
+        text: "Icons and photos replace text menus, so no reading is needed.",
+      },
+      {
+        icon: "mic",
+        title: "Speak, don't type",
+        text: "Answer questions by voice in Bangla; we transcribe later.",
+      },
+      {
+        icon: "wifi_off",
+        title: "Works offline",
+        text: "Saves everything on the phone and syncs when a connection returns.",
+      },
+      {
+        icon: "diversity_3",
+        title: "Volunteer assisted",
+        text: "Trained volunteers guide people through each survey on site.",
+      },
     ],
   },
   volunteer: {
@@ -612,10 +620,23 @@ export const homeSections = {
     roles: [
       { icon: "map", title: "Field data collector", text: "Visit factories and help workers use the app." },
       { icon: "query_stats", title: "Data analyst", text: "Clean, check and study emissions data." },
-      { icon: "translate", title: "Community liaison", text: "Bangla and local-dialect support for surveys." },
+      {
+        icon: "translate",
+        title: "Community liaison",
+        text: "Bangla and local-dialect support for surveys.",
+      },
       { icon: "brush", title: "Communications", text: "Write, design and share our findings." },
     ],
-    skills: ["Field work", "Data analysis", "Bangla", "Research", "Design", "Writing", "Training", "Community outreach"],
+    skills: [
+      "Field work",
+      "Data analysis",
+      "Bangla",
+      "Research",
+      "Design",
+      "Writing",
+      "Training",
+      "Community outreach",
+    ],
   },
   funding: {
     title: "Fund research that cuts real emissions.",

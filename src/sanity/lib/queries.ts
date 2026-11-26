@@ -3,10 +3,13 @@ import { defineQuery } from "next-sanity";
 /** ~1000 characters per minute (≈200 words × 5 chars). The UI rounds up to at least 1. */
 const readTime = `"readTime": round(length(pt::text(body)) / 1000)`;
 
+/**
+ * whatWeDo, impact, impactStats, emissionsBreakdown, emissionsFootnote and appIntro are no longer
+ * read: that copy is in src/content/site.ts.
+ */
 export const SITE_SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
-  heroTitle, heroText, heroImage, emissionsBreakdown, emissionsFootnote, impactStats,
-  methodologySteps, cta, coreValues, socialLinks, contactEmail, defaultSeo,
-  whatWeDo, impact, app, volunteer, funding, appIntro,
+  heroTitle, heroText, heroImage, methodologySteps, cta, coreValues, socialLinks, contactEmail, defaultSeo,
+  app, volunteer, funding,
   "brochureUrl": brochure.asset->url
 }`);
 

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { AppIntro } from "@/components/organisms/tools/AppIntro";
 import { ToolDirectory } from "@/components/organisms/tools/ToolDirectory";
-import { getSiteSettings, getTools } from "@/sanity/lib/content";
+import { appIntro } from "@/content/site";
+import { getTools } from "@/sanity/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -13,10 +14,10 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default async function ToolsPage() {
-  const [settings, tools] = await Promise.all([getSiteSettings(), getTools()]);
+  const tools = await getTools();
   return (
     <MotionProvider>
-      <AppIntro appIntro={settings.appIntro} />
+      <AppIntro appIntro={appIntro} />
       <ToolDirectory tools={tools} />
     </MotionProvider>
   );
