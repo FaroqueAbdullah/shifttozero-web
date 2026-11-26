@@ -48,6 +48,7 @@ export function FundingCall({ funding, brochureUrl }: Pick<SiteSettings, "fundin
           </div>
         </Reveal>
 
+        {/* TODO(Faroque): confirm the "Where your support goes" shares (Sanity: Site settings → funding). */}
         {funding.allocation?.length ? (
           <Reveal from="right" delay={0.15}>
             <div className="rounded-feature bg-surface-container-lowest p-6 text-on-surface shadow-2xl md:p-8">
@@ -67,10 +68,12 @@ export function FundingCall({ funding, brochureUrl }: Pick<SiteSettings, "fundin
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 flex items-center gap-2 font-caption text-caption text-on-surface-variant">
-                <Icon name="verified" className="text-[16px] text-primary" /> We publish how every
-                contribution is used.
-              </p>
+              <Link
+                href="/contact?topic=Funding"
+                className="mt-6 flex min-h-12 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
+              >
+                Ask us for our funding plan <Icon name="arrow_forward" className="text-[18px]" />
+              </Link>
             </div>
           </Reveal>
         ) : null}
