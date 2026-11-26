@@ -80,7 +80,7 @@ export const event = defineType({
               type: "string",
               description: "Material Symbols name, e.g. groups, mic, handshake",
             }),
-            defineField({ name: "value", type: "string", description: 'e.g. "500+ Attendees"' }),
+            defineField({ name: "value", type: "string", description: 'e.g. "40 seats"' }),
             defineField({ name: "label", type: "string", description: 'e.g. "Industry Leaders"' }),
           ],
           preview: { select: { title: "value", subtitle: "label" } },
