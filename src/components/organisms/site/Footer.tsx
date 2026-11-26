@@ -3,6 +3,7 @@ import { CurrentYear } from "@/components/atoms/CurrentYear";
 import { Icon } from "@/components/atoms/Icon";
 import { ORG_SUMMARY } from "@/content/site";
 import { footerNav } from "@/lib/navigation";
+import { CONTACT_EMAIL } from "@/lib/site-config";
 import type { SiteSettings } from "@/sanity/lib/types";
 
 const socialIcon: Record<string, string> = {
@@ -18,7 +19,9 @@ const linkClass =
 const roundLink =
   "flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-colors hover:bg-primary hover:text-on-primary";
 
-export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmail" | "socialLinks"> }) {
+export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks"> }) {
+  // TODO(Faroque): no social profile URLs exist in the repo or in Sanity. Add them in Sanity
+  // (Site settings → General → Social links) once the accounts exist; they appear here automatically.
   const socials = settings.socialLinks?.filter((s) => s.url) ?? [];
 
   return (
@@ -57,27 +60,27 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "contactEmai
             </span>
           </div>
           <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">{ORG_SUMMARY}</p>
-          {(settings.contactEmail || socials.length > 0) && (
-            <div className="flex gap-3">
-              {settings.contactEmail && (
-                <a href={`mailto:${settings.contactEmail}`} className={roundLink} aria-label="Email us">
-                  <Icon name="mail" />
-                </a>
-              )}
-              {socials.map((s) => (
-                <a
-                  key={s._key}
-                  href={s.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={roundLink}
-                  aria-label={s.platform}
-                >
-                  <Icon name={socialIcon[s.platform ?? ""] ?? "share"} />
-                </a>
-              ))}
-            </div>
-          )}
+          <div className="flex gap-3">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className={roundLink}
+              aria-label={`Email us at ${CONTACT_EMAIL}`}
+            >
+              <Icon name="mail" />
+            </a>
+            {socials.map((s) => (
+              <a
+                key={s._key}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className={roundLink}
+                aria-label={s.platform}
+              >
+                <Icon name={socialIcon[s.platform ?? ""] ?? "share"} />
+              </a>
+            ))}
+          </div>
         </div>
         {footerNav.map((group) => (
           <div key={group.title}>

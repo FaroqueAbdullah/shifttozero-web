@@ -5,10 +5,10 @@ const readTime = `"readTime": round(length(pt::text(body)) / 1000)`;
 
 /**
  * whatWeDo, impact, impactStats, emissionsBreakdown, emissionsFootnote, app and appIntro are no longer
- * read: that copy is in src/content/site.ts.
+ * read: that copy is in src/content/site.ts. contactEmail is CONTACT_EMAIL in src/lib/site-config.ts.
  */
 export const SITE_SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings" && _id == "siteSettings"][0]{
-  heroTitle, heroText, heroImage, methodologySteps, cta, coreValues, socialLinks, contactEmail, defaultSeo,
+  heroTitle, heroText, heroImage, methodologySteps, cta, coreValues, socialLinks, defaultSeo,
   volunteer, funding,
   "brochureUrl": brochure.asset->url
 }`);

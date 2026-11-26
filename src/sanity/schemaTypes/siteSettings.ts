@@ -306,7 +306,8 @@ export const siteSettings = defineType({
       ],
     }),
     defineField({ name: "brochure", type: "file", group: "general", options: { accept: "application/pdf" } }),
-    defineField({ name: "contactEmail", type: "string", group: "general" }),
+    // Not shown on the site: the address is CONTACT_EMAIL in src/lib/site-config.ts.
+    defineField({ hidden: true, name: "contactEmail", type: "string", group: "general" }),
     defineField({ name: "defaultSeo", type: "seo", group: "general" }),
   ],
   preview: { prepare: () => ({ title: "Site settings" }) },

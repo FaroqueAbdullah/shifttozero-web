@@ -62,6 +62,7 @@ export const settings = {
       text: "Every policy recommendation and technological assessment is rooted in peer-reviewed, empirical evidence.",
     },
   ],
+  // Not read by the site; the address is CONTACT_EMAIL in src/lib/site-config.ts.
   contactEmail: "hello@shifttozero.org",
 };
 
