@@ -30,20 +30,6 @@ export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slu
 
 export const POST_SLUGS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)].slug.current`);
 
-const eventCard = `_id, title, "slug": slug.current, eventType, mode, location, startsAt, endsAt, capacity,
-  summary, heroImage, cta, _updatedAt`;
-
-export const EVENTS_QUERY = defineQuery(`*[_type == "event" && defined(slug.current)]
-  | order(startsAt asc){ ${eventCard} }`);
-
-export const EVENT_QUERY = defineQuery(`*[_type == "event" && slug.current == $slug][0]{
-  ${eventCard}, about, highlights, venue, seo,
-  agenda[]{ _key, time, title, description,
-    "speaker": coalesce(speaker->{ name, role, photo }, select(defined(speakerName) => { "name": speakerName })) }
-}`);
-
-export const EVENT_SLUGS_QUERY = defineQuery(`*[_type == "event" && defined(slug.current)].slug.current`);
-
 export const TEAM_QUERY = defineQuery(`*[_type == "teamMember"] | order(order asc, name asc){
   _id, name, role, department, photo, bio, linkedin
 }`);

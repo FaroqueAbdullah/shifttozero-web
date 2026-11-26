@@ -2,7 +2,6 @@ export const mainNav = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/tools", label: "Carbon Tools" },
-  { href: "/events", label: "Events" },
   // { href: "/blog", label: "Blog" }, // hidden for now
   // { href: "/team", label: "Team" }, // hidden for now
 ] as const;
@@ -12,7 +11,6 @@ export const mobileTabs = [
   { href: "/", label: "Home", icon: "home" },
   { href: "/about", label: "About", icon: "info" },
   { href: "/tools", label: "Tools", icon: "dataset" },
-  { href: "/events", label: "Events", icon: "calendar_month" },
   // { href: "/blog", label: "Blog", icon: "newspaper" }, // hidden for now
 ] as const;
 
@@ -31,7 +29,6 @@ export const footerNav = [
   {
     title: "Community",
     links: [
-      { href: "/events", label: "Events" },
       // { href: "/blog", label: "Blog" }, // hidden for now
       { href: "/get-involved", label: "Get Involved" },
       { href: "/contact", label: "Contact Us" },
