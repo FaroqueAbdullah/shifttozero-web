@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { fieldNotes } from "@/content/fieldNotes";
 import { features } from "@/lib/features";
 import { absoluteUrl } from "@/lib/seo";
 import { getPosts } from "@/sanity/lib/content";
@@ -10,6 +11,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/about",
     "/tools",
     "/tools/app",
+    "/field-notes",
+    ...fieldNotes.map((n) => `/field-notes/${n.slug}`),
     ...(features.blog ? ["/blog"] : []),
     ...(features.team ? ["/team"] : []),
     "/get-involved",
