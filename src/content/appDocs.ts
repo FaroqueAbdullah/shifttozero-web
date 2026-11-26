@@ -13,12 +13,14 @@ export const docsHero = {
 
 export const docsNav = [
   { id: "people", label: "People" },
+  { id: "principles", label: "Principles" },
   { id: "flow", label: "How it works" },
   { id: "demo", label: "Demo" },
   { id: "calc", label: "Calculation" },
   { id: "industries", label: "Industries" },
   { id: "ai", label: "AI" },
   { id: "design", label: "Low literacy" },
+  { id: "open-question", label: "Open question" },
   { id: "standards", label: "Standards" },
   { id: "architecture", label: "Architecture" },
   { id: "rollout", label: "Rollout" },
@@ -59,6 +61,35 @@ export const people = [
     ],
   },
 ];
+
+/** Design principles behind STZ Collect. */
+export const designPrinciples = [
+  {
+    icon: "accessibility_new",
+    title: "Usable by anyone",
+    text: "The app has to work for anyone, whatever their education. If a step needs reading, it also needs another way: a picture, a sound, or a number to tap.",
+  },
+  {
+    icon: "memory",
+    title: "Small, open-source models",
+    text: "We plan to use small open-source AI models instead of large ones, to avoid the high token costs that come with large models.",
+  },
+  {
+    icon: "energy_savings_leaf",
+    title: "Mind the energy cost",
+    text: "Large models need a lot of energy to run. A tool that measures emissions should not add to them, so we aim to use the smallest model that does the job.",
+  },
+];
+
+/** The open research question for STZ Collect. */
+export const openQuestion = {
+  question: "How can someone who cannot read confirm what the AI recorded?",
+  paragraphs: [
+    "Speech models mishear. When a worker says a sentence, the AI turns it into entries such as “Coal · 12 sacks”. But the person who spoke often cannot read what is on the screen, so they cannot check it the way a reader would.",
+    "The current design reads every entry back aloud, shows pictures next to numbers, and asks a two-choice question when the AI is unsure. We do not yet know whether that is enough for someone to notice a mistake and fix it.",
+    "This is the question we most want to answer. If you work on speech interfaces, low-literacy design or human checks of AI output, we would like to hear from you.",
+  ],
+};
 
 export type Stage = {
   key: string;
@@ -108,7 +139,7 @@ export const stages: Stage[] = [
     icon: "calculate",
     text: "Activity data is multiplied by a versioned emission factor and converted to CO₂e with global warming potentials. Each result is tagged with its scope, source category, ISO 14064-1 category and gas.",
     chips: [
-      { text: "E = A × EF × GWP", mono: true },
+      { text: "CO₂e = A × EF × GWP", mono: true },
       { text: "Scope 1 · Stationary combustion", ok: true },
     ],
   },

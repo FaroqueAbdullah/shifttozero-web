@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { MotionProvider } from "@/components/motion/MotionProvider";
-import { DocsAi, DocsLowLiteracy } from "@/components/organisms/docs/DocsAi";
+import {
+  DocsAi,
+  DocsLowLiteracy,
+  DocsOpenQuestion,
+  DocsPrinciples,
+} from "@/components/organisms/docs/DocsAi";
 import { DocsCalculation, DocsIndustries } from "@/components/organisms/docs/DocsEngine";
 import { DocsHero, DocsPeople } from "@/components/organisms/docs/DocsIntro";
 import { DocsNav } from "@/components/organisms/docs/DocsNav";
@@ -23,6 +28,7 @@ export default function AppDocsPage() {
       <DocsHero />
       <DocsNav />
       <DocsPeople />
+      <DocsPrinciples />
       <HowItWorks />
       {/* Clears the site header (80px) and the sticky "on this page" nav (~49px). */}
       <AppDemo
@@ -35,6 +41,7 @@ export default function AppDocsPage() {
       <DocsIndustries />
       <DocsAi />
       <DocsLowLiteracy />
+      <DocsOpenQuestion />
       <DocsStandards />
       <DocsArchitecture />
       <DocsRollout />

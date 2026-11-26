@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Icon } from "@/components/atoms/Icon";
 import { DocsHeading } from "@/components/molecules/DocsHeading";
 import { Reveal } from "@/components/molecules/Reveal";
-import { aiFeatures, aiShots, principles } from "@/content/appDocs";
+import { aiFeatures, aiShots, designPrinciples, openQuestion, principles } from "@/content/appDocs";
 
 export function DocsAi() {
   return (
@@ -87,6 +88,63 @@ export function DocsLowLiteracy() {
             </Reveal>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+export function DocsPrinciples() {
+  return (
+    <section id="principles" className="scroll-mt-32 bg-surface-container-low py-20 md:py-[88px]">
+      <div className="container-page">
+        <DocsHeading
+          eyebrow="Design principles"
+          title="Usable by anyone, light on energy"
+          lede="Three rules shape every design decision in STZ Collect."
+        />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          {designPrinciples.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.08}>
+              <article className="flex h-full flex-col gap-3.5 rounded-3xl border border-outline-variant bg-surface-container-lowest p-7">
+                <span className="grid h-[52px] w-[52px] place-items-center rounded-2xl bg-secondary-container text-on-secondary-container">
+                  <Icon name={p.icon} />
+                </span>
+                <h3 className="font-headline-md text-headline-md text-on-surface">{p.title}</h3>
+                <p className="text-[15px] text-on-surface-variant">{p.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function DocsOpenQuestion() {
+  return (
+    <section id="open-question" className="scroll-mt-32 py-20 md:py-[88px]">
+      <div className="container-page">
+        <Reveal>
+          <div className="flex max-w-4xl flex-col gap-5 rounded-[32px] border-2 border-dashed border-primary/50 bg-surface-container-lowest p-7 md:p-10">
+            <p className="flex items-center gap-2 font-label-md text-label-md tracking-wider text-primary uppercase">
+              <Icon name="help" /> Open research question
+            </p>
+            <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-on-surface md:font-headline-lg md:text-headline-lg">
+              {openQuestion.question}
+            </h2>
+            {openQuestion.paragraphs.map((p) => (
+              <p key={p} className="font-body-lg text-body-lg text-on-surface-variant">
+                {p}
+              </p>
+            ))}
+            <Link
+              href="/contact?topic=General"
+              className="flex min-h-12 items-center gap-2 self-start rounded-lg bg-primary px-6 py-3 font-label-md text-label-md text-on-primary"
+            >
+              Get in touch <Icon name="arrow_forward" className="text-[18px]" />
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
