@@ -1,6 +1,11 @@
+import { Fragment } from "react";
 import { cn } from "@/lib/utils";
 
-/** Headline whose words rise in one after another (CSS only, so it shows before JavaScript loads). */
+/**
+ * Headline whose words rise in one after another (CSS only, so it shows before JavaScript loads).
+ * The text is rendered once, with real spaces between the word spans, so screen readers, copy/paste
+ * and search engines all get the plain sentence.
+ */
 export function AnimatedHeadline({ text, className }: { text: string; className?: string }) {
   const words = text.split(" ");
   return (
@@ -10,20 +15,19 @@ export function AnimatedHeadline({ text, className }: { text: string; className?
         className,
       )}
     >
-      <span className="sr-only">{text}</span>
-      <span aria-hidden>
-        {words.map((word, i) => (
-          <span key={i} className="inline-block overflow-hidden align-bottom">
+      {words.map((word, i) => (
+        <Fragment key={i}>
+          <span className="inline-block overflow-hidden align-bottom">
             <span
               className="inline-block motion-safe:animate-word-rise"
               style={{ animationDelay: `${i * 70}ms` }}
             >
               {word}
-              {i < words.length - 1 ? " " : ""}
             </span>
           </span>
-        ))}
-      </span>
+          {i < words.length - 1 ? " " : null}
+        </Fragment>
+      ))}
     </h1>
   );
 }

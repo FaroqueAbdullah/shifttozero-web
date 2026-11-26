@@ -26,8 +26,8 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks
 
   return (
     <footer className="w-full border-t border-outline-variant bg-surface-container-highest">
-      {/* Mobile: compact centered footer (Stitch mobile screens). */}
-      <div className="flex flex-col items-center gap-4 px-margin-mobile py-8 text-center md:hidden">
+      {/* Mobile: compact centered footer (Stitch mobile screens). Hidden from md up with display: none. */}
+      <div className="flex flex-col items-center gap-4 px-margin-mobile pt-8 pb-4 text-center md:hidden">
         <span className="font-headline-md text-headline-md font-bold text-primary">Shift to Zero Carbon</span>
         <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-4 gap-y-2">
           {[
@@ -46,9 +46,6 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks
             </Link>
           ))}
         </nav>
-        <p className="font-caption text-caption text-on-surface-variant">
-          © <CurrentYear /> Shift to Zero Carbon. All rights reserved.
-        </p>
       </div>
 
       <div className="mx-auto hidden max-w-container-max grid-cols-5 gap-gutter px-margin-desktop py-12 md:grid">
@@ -99,8 +96,9 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks
           </div>
         ))}
       </div>
-      <div className="hidden border-t border-outline-variant/30 py-6 md:block">
-        <p className="container-page font-caption text-caption text-on-surface-variant">
+      {/* One copyright line for every screen size; the blocks above are mobile/desktop variants. */}
+      <div className="border-t border-outline-variant/30 py-6">
+        <p className="container-page text-center font-caption text-caption text-on-surface-variant md:text-left">
           © <CurrentYear /> Shift to Zero Carbon. All rights reserved.
         </p>
       </div>
