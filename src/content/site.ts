@@ -73,22 +73,22 @@ export const emissions = {
 /** Home: replaces the old impact numbers with what has actually happened so far. */
 export const whereWeAre = {
   eyebrow: "Where we are",
-  title: "Early days, and honest about it.",
-  text: "We started in mid-2025 and are in our pilot phase. This is what we have done so far.",
+  title: "What we have done so far.",
+  text: "We have implemented emissions tracking at two garment factories and are working with five more factories in other industries for research.",
   items: [
     {
-      icon: "flag",
-      title: "Pilot phase",
-      text: "We are testing our approach with a few factories before we grow.",
-      href: "/about",
-      cta: "About us",
-    },
-    {
       icon: "apparel",
-      title: "2 garment factories supported",
-      text: "We helped two garment companies adopt existing third-party emissions software.",
+      title: "2 garment factories implemented",
+      text: "We implemented emissions tracking at two garment factories, using existing third-party emissions software.",
       href: "/tools#integration",
       cta: "Integration support",
+    },
+    {
+      icon: "factory",
+      title: "5 more factories in research",
+      text: "We are working with five factories in other industries to research how their emissions can be measured.",
+      href: "/about",
+      cta: "About us",
     },
     {
       icon: "travel_explore",
