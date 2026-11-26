@@ -43,7 +43,7 @@ export default async function FieldNotePage({ params }: PageProps<"/field-notes/
       <article className="mx-auto max-w-3xl">
         <Link
           href="/field-notes"
-          className="mb-8 inline-flex min-h-12 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
+          className="mb-8 inline-flex min-h-14 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
         >
           <Icon name="arrow_back" className="text-[18px]" /> All field notes
         </Link>
@@ -78,7 +78,7 @@ export default async function FieldNotePage({ params }: PageProps<"/field-notes/
             <Link
               key={r.href}
               href={r.href}
-              className="flex min-h-12 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
+              className="flex min-h-14 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
             >
               {r.label} <Icon name="arrow_forward" className="text-[18px]" />
             </Link>

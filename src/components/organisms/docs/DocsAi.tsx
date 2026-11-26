@@ -139,7 +139,7 @@ export function DocsOpenQuestion() {
             ))}
             <Link
               href="/contact?topic=General"
-              className="flex min-h-12 items-center gap-2 self-start rounded-lg bg-primary px-6 py-3 font-label-md text-label-md text-on-primary"
+              className="flex min-h-14 items-center gap-2 self-start rounded-lg bg-primary px-6 py-3 font-label-md text-label-md text-on-primary"
             >
               Get in touch <Icon name="arrow_forward" className="text-[18px]" />
             </Link>

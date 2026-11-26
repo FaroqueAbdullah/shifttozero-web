@@ -31,7 +31,7 @@ export default function ContactPage() {
           </div>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="flex min-h-12 items-center gap-3 font-body-md text-body-md text-primary hover:underline"
+            className="flex min-h-14 items-center gap-3 font-body-md text-body-md text-primary hover:underline"
           >
             <Icon name="mail" /> {CONTACT_EMAIL}
           </a>

@@ -89,7 +89,7 @@ export default function AboutPage() {
                   <p className="flex-1 font-body-md text-body-md text-on-surface-variant">{t.text}</p>
                   <Link
                     href={t.href}
-                    className="flex min-h-12 items-center gap-1 self-start font-label-md text-label-md text-primary hover:underline"
+                    className="flex min-h-14 items-center gap-1 self-start font-label-md text-label-md text-primary hover:underline"
                   >
                     {t.cta} <Icon name="arrow_forward" className="text-[18px]" />
                   </Link>
@@ -130,7 +130,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/contact"
-            className="flex min-h-12 shrink-0 items-center gap-2 rounded-lg bg-surface-container-lowest px-6 py-3 font-label-md text-label-md text-primary"
+            className="flex min-h-14 shrink-0 items-center gap-2 rounded-lg bg-surface-container-lowest px-6 py-3 font-label-md text-label-md text-primary"
           >
             Contact us <Icon name="arrow_forward" className="text-[18px]" />
           </Link>

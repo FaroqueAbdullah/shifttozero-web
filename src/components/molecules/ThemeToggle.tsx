@@ -34,7 +34,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={theme ? `Switch to ${next} mode` : "Toggle theme"}
       title={theme ? `Switch to ${next} mode` : undefined}
       className={cn(
-        "inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-primary",
+        "touch-target inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-primary",
         className,
       )}
     >

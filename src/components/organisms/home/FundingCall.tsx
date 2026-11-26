@@ -70,7 +70,7 @@ export function FundingCall({ funding, brochureUrl }: Pick<SiteSettings, "fundin
               </ul>
               <Link
                 href="/contact?topic=Funding"
-                className="mt-6 flex min-h-12 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
+                className="mt-6 flex min-h-14 items-center gap-1 font-label-md text-label-md text-primary hover:underline"
               >
                 Ask us for our funding plan <Icon name="arrow_forward" className="text-[18px]" />
               </Link>

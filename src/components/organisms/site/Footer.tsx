@@ -17,7 +17,7 @@ const socialIcon: Record<string, string> = {
 const linkClass =
   "font-body-md text-body-md text-on-surface-variant opacity-80 transition-colors hover:text-primary hover:underline hover:opacity-100";
 const roundLink =
-  "flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-colors hover:bg-primary hover:text-on-primary";
+  "touch-target flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-colors hover:bg-primary hover:text-on-primary";
 
 export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks"> }) {
   // TODO(Faroque): no social profile URLs exist in the repo or in Sanity. Add them in Sanity
@@ -60,7 +60,7 @@ export function Footer({ settings }: { settings: Pick<SiteSettings, "socialLinks
             </span>
           </div>
           <p className="max-w-sm font-body-md text-body-md text-on-surface-variant">{ORG_SUMMARY}</p>
-          <div className="flex gap-3">
+          <div className="flex gap-4">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className={roundLink}

@@ -27,13 +27,13 @@ export function IntegrationSupport() {
           <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="#calculators"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-lg border-2 border-secondary px-6 py-3 font-label-md text-label-md text-secondary transition-colors hover:bg-secondary/5"
+              className="flex min-h-14 items-center justify-center gap-2 rounded-lg border-2 border-secondary px-6 py-3 font-label-md text-label-md text-secondary transition-colors hover:bg-secondary/5"
             >
               See third-party tools <Icon name="arrow_downward" />
             </Link>
             <Link
               href="/contact?topic=Partnership"
-              className="flex min-h-12 items-center justify-center gap-2 rounded-lg px-4 py-3 font-label-md text-label-md text-primary hover:underline"
+              className="flex min-h-14 items-center justify-center gap-2 rounded-lg px-4 py-3 font-label-md text-label-md text-primary hover:underline"
             >
               Ask about integration support <Icon name="arrow_forward" className="text-[18px]" />
             </Link>
